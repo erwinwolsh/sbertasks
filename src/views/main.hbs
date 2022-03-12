@@ -1,0 +1,41 @@
+<div class="container" style="background-color: #0099ff; color: white; border-radius: 10px">
+<h1 class="text-center mt-5 pt-2">Instapost</h1>
+<p class="text-center mt-2 mb-5 pb-2">Please, uploud your post below, say "hello" to the world</p>
+</div>
+
+<div class="container">
+<div class="d-flex justify-content-center">
+	<form class="d-flex flex-column align-items-left" action="/addressbook" method="POST" >
+		<div class="mb-3">
+			<input name="name" placeholder="Your login" type="text" class="form-control">
+		</div>
+		<div class="mb-3">
+			<input name="text" placeholder="Say something" type="text" class="form-control">
+		</div>
+		<div class="mb-3">
+		<input name="photo" type="text" placeholder="Put your link here" class="form-control">
+		</div>
+		<button type="submit" class="btn btn-primary">POST</button>
+  </form> 
+	</form>
+</div>
+
+<hr>
+
+<section class="posts">
+	<div class="container">
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+	{{#each listOfPosts}}	
+  <div class="col">
+    <div class="card">
+      <img src="{{this.photo}}" class="card-img-top" alt="..." style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{this.text}}</p>
+      </div>
+    </div>
+  </div>
+	{{/each}}
+	</div>
+	</div>
+</section>
