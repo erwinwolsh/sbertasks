@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <ul>
+      <li><a href="/">Main</a>
+      </li>
+      <li>
+        <a href="/secret">Your account</a>
+      </li>
+      {{#if name}}
+        <li>
+          <a href="/">Sign Out</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="/auth/signup">Sign Up</a>
+        </li>
+        <li>
+          <a href="/auth/signin">Sign In</a>
+        </li>
+      {{/if}}
+    </ul>
+  </div>
+</div>
